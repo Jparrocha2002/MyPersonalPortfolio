@@ -1,0 +1,113 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function index()
+    {
+        $admin = User::orderBy('created_at', 'DESC')->get();
+  
+        return view('admin.index', compact('admin'));
+    }
+  
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('admin.create');
+    }
+  
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $admin = new User();
+        $admin->role = $request->input('role');
+        $admin->name = $request->input('name');
+        $admin->email = $request->input('email');
+        $admin->password = bcrypt($request->input('password'));
+
+        // $admin->job = $request->input('job');
+        // $admin->birthday = $request->input('birthday');
+        // $admin->age = $request->input('age');
+        // $admin->gender = $request->input('gender');
+        // $admin->phone = $request->input('phone');
+        // $admin->address = $request->input('address');
+        // $admin->religion = $request->input('religion');
+        // $admin->status = $request->input('status');
+        // $admin->description = $request->input('description');
+        // $admin->fb_link = $request->input('fb_link');
+        // $admin->instagram_link = $request->input('instagram_link');
+        // $admin->linkedin_link = $request->input('linkedin_link');
+        // $admin->github_link = $request->input('github_link');
+
+        if ($request->hasFile('avatar')) {
+            $avatarPath = $request->file('avatar')->store('avatars', 'public');
+            $admin->avatar = $avatarPath;
+        }
+
+        $admin->save();
+
+        return redirect()->route('admin.index')->with('success', 'User created successfully');
+    }
+  
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        $admin = User::findOrFail($id);
+  
+        return view('admin.show', compact('admin'));
+    }
+  
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(string $id)
+    {
+        $admin = User::findOrFail($id);
+  
+        return view('admin.edit', compact('admin'));
+    }
+  
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+        $admin = User::findOrFail($id);
+
+        $admin->role = $request->input('role');
+        $admin->name = $request->input('name');
+        $admin->email = $request->input('email');
+
+    if ($request->hasFile('avatar')) {
+        $avatarPath = $request->file('avatar')->store('avatars', 'public');
+        $admin->avatar = $avatarPath;
+    }
+
+    $admin->save();
+
+    return redirect()->route('admin.index')->with('success', 'User updated successfully');
+
+    }
+  
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $admin = User::findOrFail($id);
+  
+        $admin->delete();
+  
+        return redirect()->route('admin.index')->with('success', 'User deleted successfully');
+    }
+}
