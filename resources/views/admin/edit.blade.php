@@ -17,10 +17,7 @@
                             <div class="table-responsive">
                                 <div class="form-group">
                                     <label>Role</label>
-                                    <select name="role" class="form-control" value="{{ $admin->role }}">
-                                        <option value="admin">Admin</option>
-                                        <option value="spectator">Spectator</option>
-                                    </select>
+                                    <input type="text" name="role" class="form-control" value="{{ $admin->role }}" readonly>
                                 </div>
                                 <div class="form-group">
                                     <label>Avatar</label>

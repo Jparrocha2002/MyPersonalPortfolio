@@ -33,20 +33,6 @@ class UserController extends Controller
         $admin->email = $request->input('email');
         $admin->password = bcrypt($request->input('password'));
 
-        // $admin->job = $request->input('job');
-        // $admin->birthday = $request->input('birthday');
-        // $admin->age = $request->input('age');
-        // $admin->gender = $request->input('gender');
-        // $admin->phone = $request->input('phone');
-        // $admin->address = $request->input('address');
-        // $admin->religion = $request->input('religion');
-        // $admin->status = $request->input('status');
-        // $admin->description = $request->input('description');
-        // $admin->fb_link = $request->input('fb_link');
-        // $admin->instagram_link = $request->input('instagram_link');
-        // $admin->linkedin_link = $request->input('linkedin_link');
-        // $admin->github_link = $request->input('github_link');
-
         if ($request->hasFile('avatar')) {
             $avatarPath = $request->file('avatar')->store('avatars', 'public');
             $admin->avatar = $avatarPath;

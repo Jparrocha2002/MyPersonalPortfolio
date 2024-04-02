@@ -34,7 +34,6 @@
                                                 <a href="{{ route('skills.edit', $skill->id)}}" type="button" class="btn btn-warning btn-sm">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-
                                                 <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$skill->id}}">
                                                     <i class="fas fa-trash"></i>
                                                 </a>

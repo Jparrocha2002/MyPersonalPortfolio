@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\front_endController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WorkController;
+use App\Http\Controllers\AdminController;
 
 
 
@@ -35,6 +36,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('skills', SkillController::class);
 
     Route::resource('works', WorkController::class);
+
+    Route::resource('profile', AdminController::class);
 
     Route::resource('/', front_endController::class);
 

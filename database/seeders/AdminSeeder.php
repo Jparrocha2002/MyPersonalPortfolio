@@ -54,7 +54,6 @@ class AdminSeeder extends Seeder
                 'remember_token' => NULL,
                 'created_at' => now(),
                 'updated_at' => now(),
-
             ],
         ]);
     }

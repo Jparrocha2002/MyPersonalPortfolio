@@ -101,8 +101,8 @@
               <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
               <div class="dropdown-title">Hello! {{ Auth::user()->name }}</div>
-              <a href="profile.html" class="dropdown-item has-icon"> <i class="far
-										fa-user"></i> Profile
+              <a href="" class="dropdown-item has-icon">
+                  <i class="far fa-user"></i> Profile
               </a>
               <div class="dropdown-divider"></div>
               <div class="logout">
