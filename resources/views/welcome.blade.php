@@ -214,10 +214,10 @@
         <section class="mh-skills-tag" id="mh-skills">
     <div class="container">
         <div class="row section-separator">
+            <div class="col-sm-12">
             <div class="section-title text-center col-sm-12">
                 <h2>Skills</h2>
             </div>
-            <div class="col-sm-12">
                 <div class="row">
                     @foreach ($skills as $index => $skill)
                         <div class="col-md-4">
@@ -261,26 +261,13 @@
                                  <h3 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">Education</h3>
                                 <div class="mh-education-deatils">
                                     <!-- Education Institutes-->
+                                    @foreach($educationals as $educational)
                                     <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                                        <h4>Primary School From <a href="#">Hilongos South Central School</a></h4>
-                                        <div class="mh-eduyear">2009-2015</div>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a 
-                                        page when looking at its layout. The point of using  Lorem Ipsum </p>
-                                    </div>                                
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                        <h4>Secondary School From <a href="#">Hilongos National Vocational School</a></h4>
-                                        <div class="mh-eduyear">2015-2021</div>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a 
-                                        page when looking at its layout. The point of using  Lorem Ipsum </p>
-                                    </div>                                
-                                    <!-- Education Institutes-->
-                                    <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                        <h4>Bachelor of Science in Information Techology From <a href="#">MLG College of Learning inc.</a></h4>
-                                        <div class="mh-eduyear">2021-</div>
-                                        <p>It is a long established fact that a reader will be distracted by the readable content of a 
-                                        page when looking at its layout. The point of using L orem Ipsum </p>
+                                        <h4>{{ $educational->school_type }} From <a href="#">{{ $educational->school_name }}</a></h4>
+                                        <div class="mh-eduyear">{{ $educational->date }}</div>
+                                        <p>{{ $educational->description }}</p>
                                     </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -289,35 +276,16 @@
                                  <h3>Work Experience</h3>
                                 <div class="mh-experience-deatils">
                                     <!-- Education Institutes-->
+                                    @foreach($experiences as $experience)
                                     <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
-                                        <h4>No Experience<a href="#"></a></h4>
-                                        <div class="mh-eduyear"></div>
-                                        <span></span>
+                                        <h4>{{ $experience->job_title }} at<a href="#"> {{ $experience->company }}</a></h4>
+                                        <div class="mh-eduyear">{{ $experience->date }}</div>
+                                        <span>Responsibility:</span>
                                         <ul class="work-responsibility">
-                                            <!-- <li><i class="fa fa-circle"></i></li>
-                                            <li><i class="fa fa-circle"></i></li> -->
+                                            <li><i class="fa fa-circle"></i> {{ $experience->responsibility }}</li>
                                         </ul>
-                                    </div>                                
-                                    <!-- Education Institutes-->
-                                    <!-- <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
-                                        <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                        <div class="mh-eduyear">2005-2008</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                            <li><i class="fa fa-circle"></i>Project Management</li>
-                                        </ul>
-                                    </div>                                 -->
-                                    <!-- Education Institutes-->
-                                    <!-- <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                                        <h4>Art & Multimedia From <a href="#">Oxford University</a></h4>
-                                        <div class="mh-eduyear">2005-2008</div>
-                                        <span>Responsibility :</span>
-                                        <ul class="work-responsibility">
-                                            <li><i class="fa fa-circle"></i>Validate CSS</li>
-                                            <li><i class="fa fa-circle"></i>Project Management</li>
-                                        </ul>
-                                    </div> -->
+                                    </div> 
+                                    @endforeach                               
                                 </div>
                             </div>
                         </div>
@@ -375,54 +343,24 @@
                     <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                         <h3>Featured Posts</h3>
                     </div>
+                    @foreach($blogs as $blog)
                     <div class="col-sm-12 col-md-4">
                          <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="asset/images/b-3.png" alt="" class="img-fluid">
+                            <img src="{{ asset('storage/' . $blog->blog_img ) }}" alt="" class="img-fluid">
                             <div class="blog-inner">
-                                <h2><a href="blog-single.html">A life without the daily traffic jams</a></h2>
+                                <h2><a href="blog-single.html">{{ $blog->title }}</a></h2>
                                 <div class="mh-blog-post-info">
                                     <ul>
-                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
+                                        <li><strong>Post On</strong><a href="#">{{ $blog->date }}</a></li>
+                                        <li><strong>By</strong><a href="#">{{ $blog->author }}</a></li>
                                     </ul>
                                 </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
+                                <p>{{ $blog->content }}</p>
+                                <a href="{{ $blog->link }}">Read More</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <img src="asset/images/b-2.png" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="blog-single.html">Proportion are what’s really needed</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                    </ul>
-                                </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
-                        <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.7s">
-                            <img src="asset/images/b-1.png" alt="" class="img-fluid">
-                            <div class="blog-inner">
-                                <h2><a href="blog-single.html">Mounts of paper work to remember the way</a></h2>
-                                <div class="mh-blog-post-info">
-                                    <ul>
-                                        <li><strong>Post On</strong><a href="#">24.11.19</a></li>
-                                        <li><strong>By</strong><a href="#">ThemeSpiders</a></li>
-                                    </ul>
-                                </div>
-                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout</p>
-                                <a href="blog-single.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>        
@@ -432,7 +370,7 @@
            TESTIMONIALS
         ===================
         -->
-        <section class="mh-testimonial" id="mh-testimonial">
+        <!-- <section class="mh-testimonial" id="mh-testimonial">
             <div class="home-v-img">
                 <div class="container">
                     <div class="row section-separator">
@@ -507,7 +445,7 @@
                 </div>
             </div>
         </section>
-        
+         -->
         <!--
         ===================
            FOOTER 1
@@ -522,20 +460,21 @@
                         </div>
                         
                         <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <form id="contactForm" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                            <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                             @csrf
                                 <div id="msgSubmit" class="h3 text-center hidden"></div>
                                 <div class="row">
                                     <div class="col-md-6 col-sm-12">
-                                        <input name="name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                                        <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
                                     </div>
                                     <div class="col-md-6 col-sm-12">
-                                        <input name="name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                        <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
                                     </div>
                                     <div class="col-sm-12">
-                                        <input name="name" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                        <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
                                     </div>
                                     <div class="col-sm-12">
-                                        <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                        <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
                                     </div>
                                     <!-- Subject Button -->
                                     <div class="btn-form col-sm-12">

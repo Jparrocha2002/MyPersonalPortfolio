@@ -8,32 +8,32 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
-                            <h4>Edit User</h4>
+                            <h4>Edit Educational</h4>
                         </div>
-                        <form action="{{ route('works.update', $works->id) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('experiences.update', $experiences->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="card-body">
                             <div class="table-responsive">
                                 <div class="form-group">
-                                    <label>Logo</label>
-                                    <input type="file" name="logo" class="form-control-file" value="{{ $works->logo }}" >
+                                    <label>Job Title</label>
+                                    <input type="text" name="job_title" class="form-control" value="{{ $experiences->job_title }}" >
                                 </div>
                                 <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="name" class="form-control" value="{{ $works->name }}" >
+                                    <label>Company</label>
+                                    <input type="text" name="company" class="form-control" value="{{ $experiences->company }}" >
                                 </div>
                                 <div class="form-group">
-                                    <label>Link</label>
-                                    <input type="text" name="link" class="form-control" value="{{ $works->link }}" >
+                                    <label>Date</label>
+                                    <input type="date" name="date" class="form-control" value="{{ $experiences->date }}" >
                                 </div>
                                 <div class="form-group">
-                                    <label>Type</label>
-                                    <input type="text" name="type" class="form-control" value="{{ $works->type }}" >
+                                    <label>Responsibility</label>
+                                    <input type="text" name="responsibility" class="form-control" value="{{ $experiences->responsibility }}" >
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{ route('works.index') }}" class="btn btn-danger">Back</a>
+                            <a href="{{ route('experiences.index') }}" class="btn btn-danger">Back</a>
                         </div>
                         </form>
                     </div>

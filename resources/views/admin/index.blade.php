@@ -10,7 +10,7 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
                             <h4>User</h4>
-                            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-3">Add Comics</a>
+                            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-3">Add User</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -43,7 +43,7 @@
                                             </td>
                                             @else
                                             <td>
-                                                <img src="{{ asset('assets/img/profile1.jpg') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="img-profile rounded-circle">
+                                                <img src="{{ asset('assets/img/user.png') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="img-profile rounded-circle">
                                             </td>
                                             @endif
                                             <td>{{ $user->name }}</td>

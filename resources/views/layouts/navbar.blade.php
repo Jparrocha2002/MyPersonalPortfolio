@@ -96,7 +96,7 @@
               @if(Auth::user()->avatar)
                   <img src="{{asset('storage/' . Auth()->user()->avatar)}}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
               @else
-                  <img src="{{ asset('assets/img/profile1.jpg') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
+                  <img src="{{ asset('assets/img/user.png') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
               @endif
               <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">

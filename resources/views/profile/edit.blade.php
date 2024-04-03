@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Birthday</label>
-                                    <input type="text" name="birthday" class="form-control" value="{{ $profile->birthday }}" >
+                                    <input type="date" name="birthday" class="form-control" value="{{ $profile->birthday }}" >
                                 </div>
                                 <div class="form-group">
                                     <label>Age</label>

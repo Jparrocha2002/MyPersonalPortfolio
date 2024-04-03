@@ -3,39 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Models\User;
-use App\Models\Works;
-use App\Models\Skills;
-use App\Models\Educational;
-use App\Models\Experience;
-use App\Models\Blog;
+use App\Models\Contact;
 
-
-
-class front_endController extends Controller
+class ContactController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // Fetch users with the role of admin
-        $admin = User::where('role', 'admin')->get();
-
-        $skills = Skills::all();
-        
-        $works = Works::all();
-
-        $educationals = Educational::all();
-
-        $experiences = Experience::all();
-
-        $blogs = Blog::all();
-
-        // Pass the fetched data to the front-end view
-        return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works
-        , 'educationals' => $educationals, 'experiences' => $experiences, 'blogs' => $blogs]);
+        $contacts = Contact::orderBy('created_at', 'DESC')->get();
+  
+        return view('contacts.index', compact('contacts'));
     }
 
     /**
@@ -43,7 +22,7 @@ class front_endController extends Controller
      */
     public function create()
     {
-        //
+        // return view('welcome');
     }
 
     /**
@@ -51,7 +30,16 @@ class front_endController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contacts = new Contact();
+
+        $contacts->first_name = $request->input('first_name');
+        $contacts->last_name = $request->input('last_name');
+        $contacts->email = $request->input('email');
+        $contacts->message = $request->input('message');
+
+        $contacts->save();
+
+        return redirect()->route('contacts.index')->with('success', 'Skill created successfully');
     }
 
     /**

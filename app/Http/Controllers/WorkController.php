@@ -81,7 +81,7 @@ class WorkController extends Controller
             $avatarPath = $request->file('logo')->store('Logo', 'public');
             $works->logo = $avatarPath;
         }
-
+        
         $works->save();
 
         return redirect()->route('works.index')->with('success', 'Work Updated successfully');

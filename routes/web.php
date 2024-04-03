@@ -7,8 +7,10 @@ use App\Http\Controllers\front_endController;
 use App\Http\Controllers\SkillController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\AdminController;
-
-
+use App\Http\Controllers\EducationalController;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('works', WorkController::class);
 
     Route::resource('profile', AdminController::class);
+    
+    Route::resource('educationals', EducationalController::class);
+
+    Route::resource('experiences', ExperienceController::class);
+
+    Route::resource('blogs', BlogController::class);
+
+    Route::resource('contacts', ContactController::class);
 
     Route::resource('/', front_endController::class);
 
