@@ -19,7 +19,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.create');
+       //
     }
   
     /**
@@ -48,9 +48,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $admin = User::findOrFail($id);
-  
-        return view('admin.show', compact('admin'));
+        //
     }
   
     /**
@@ -58,9 +56,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $admin = User::findOrFail($id);
-  
-        return view('admin.edit', compact('admin'));
+        //
     }
   
     /**

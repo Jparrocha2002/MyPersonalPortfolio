@@ -2,6 +2,7 @@
 
 @section('content')
 <!-- Main Content -->
+@include('admin.create')
 <div class="main-content">
     <section class="section">
         <div class="section-body">
@@ -10,7 +11,7 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
                             <h4>User</h4>
-                            <a href="{{ route('admin.create') }}" class="btn btn-primary mb-3">Add User</a>
+                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add User</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -39,17 +40,17 @@
                                             </td>
                                             @if($user->avatar)
                                             <td>
-                                                <img src="{{ asset('storage/' . $user->avatar) }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="img-profile rounded-circle">
+                                                <img src="{{ asset('storage/' . $user->avatar) }}" alt="avatar" style="width: 40px; height:40px;" class="img-profile rounded-circle">
                                             </td>
                                             @else
                                             <td>
-                                                <img src="{{ asset('assets/img/user.png') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="img-profile rounded-circle">
+                                                <img src="{{ asset('assets/img/user.png') }}" alt="avatar" style="width: 40px; height:40px;" class="img-profile rounded-circle">
                                             </td>
                                             @endif
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td>
-                                                <a href="{{ route('admin.edit', $user->id)}}" type="button" class="btn btn-warning btn-sm">
+                                                 <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$user->id}}">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
@@ -77,6 +78,7 @@
     </section>
     @foreach($admin as $user)
         @include('admin.modal.deleteModal')
+        @include('admin.edit')
     @endforeach
 </div>
 

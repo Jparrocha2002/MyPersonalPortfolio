@@ -33,13 +33,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
     Route::middleware(['checkRole:admin'])->group(function () {
         Route::resource('admin', UserController::class);
+        Route::resource('profile', AdminController::class);
     });
     
     Route::resource('skills', SkillController::class);
 
     Route::resource('works', WorkController::class);
 
-    Route::resource('profile', AdminController::class);
     
     Route::resource('educationals', EducationalController::class);
 

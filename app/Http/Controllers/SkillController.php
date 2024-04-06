@@ -22,7 +22,7 @@ class SkillController extends Controller
      */
     public function create()
     {
-        return view('skills.create');
+        //
     }
 
     /**
@@ -45,9 +45,7 @@ class SkillController extends Controller
      */
     public function show(string $id)
     {
-        $skills = Skills::findOrFail($id);
-  
-        return view('skills.show', compact('skills'));
+        //
     }
 
     /**
@@ -55,9 +53,7 @@ class SkillController extends Controller
      */
     public function edit(string $id)
     {
-        $skills = Skills::findOrFail($id);
-  
-        return view('skills.edit', compact('skills'));
+        //
     }
 
     /**

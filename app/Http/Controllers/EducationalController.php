@@ -22,7 +22,7 @@ class EducationalController extends Controller
      */
     public function create()
     {
-        return view('educationals.create');
+        //
     }
 
     /**
@@ -47,9 +47,7 @@ class EducationalController extends Controller
      */
     public function show(string $id)
     {
-        $educationals = Educational::findOrFail($id);
-  
-        return view('educationals.show', compact('educationals'));
+       //
     }
 
     /**
@@ -57,9 +55,7 @@ class EducationalController extends Controller
      */
     public function edit(string $id)
     {
-        $educationals = Educational::findOrFail($id);
-  
-        return view('educationals.edit', compact('educationals'));
+       //
     }
 
     /**

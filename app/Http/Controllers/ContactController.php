@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $contacts->save();
 
-        return redirect()->route('contacts.index')->with('success', 'Skill created successfully');
+        return redirect()->route('home')->with('success', 'Skill created successfully');
     }
 
     /**

@@ -22,7 +22,7 @@ class ExperienceController extends Controller
      */
     public function create()
     {
-        return view('experiences.create');
+       //
     }
 
     /**
@@ -47,9 +47,7 @@ class ExperienceController extends Controller
      */
     public function show(string $id)
     {
-        $experiences = Experience::findOrFail($id);
-
-        return view('experiences.show', compact('experiences'));
+        //
     }
 
     /**
@@ -57,9 +55,7 @@ class ExperienceController extends Controller
      */
     public function edit(string $id)
     {
-        $experiences = Experience::findOrFail($id);
-
-        return view('experiences.edit', compact('experiences'));
+        //
     }
 
     /**

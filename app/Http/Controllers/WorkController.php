@@ -22,7 +22,7 @@ class WorkController extends Controller
      */
     public function create()
     {
-        return view('works.create');
+        //
     }
 
     /**
@@ -51,9 +51,7 @@ class WorkController extends Controller
      */
     public function show(string $id)
     {
-        $works = Works::findOrFail($id);
-  
-        return view('works.show', compact('works'));
+       //
     }
 
     /**
@@ -61,9 +59,7 @@ class WorkController extends Controller
      */
     public function edit(string $id)
     {
-        $works = Works::findOrFail($id);
-  
-        return view('works.edit', compact('works'));
+        //
     }
 
     /**

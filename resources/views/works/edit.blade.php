@@ -1,45 +1,38 @@
-@extends('app')
-
-@section('content')
-<div class="main-content">
-    <section class="section">
-        <div class="section-body">
-            <div class="user">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header d-flex justify-content-between align-items-center mb-4">
-                            <h4>Edit User</h4>
-                        </div>
-                        <form action="{{ route('works.update', $works->id) }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div class="form-group">
-                                    <label>Logo</label>
-                                    <input type="file" name="logo" class="form-control-file" value="{{ $works->logo }}" >
-                                </div>
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input type="text" name="name" class="form-control" value="{{ $works->name }}" >
-                                </div>
-                                <div class="form-group">
-                                    <label>Link</label>
-                                    <input type="text" name="link" class="form-control" value="{{ $works->link }}" >
-                                </div>
-                                <div class="form-group">
-                                    <label>Type</label>
-                                    <input type="text" name="type" class="form-control" value="{{ $works->type }}" >
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
-                            <a href="{{ route('works.index') }}" class="btn btn-danger">Back</a>
-                        </div>
-                        </form>
+<div class="modal fade" id="editModal{{$work->id}}" tabindex="-1" role="dialog" aria-labelledby="editModal{{$work->id}}" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModal{{$work->id}}">Edit Work</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="{{ route('works.update', $work->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Logo</label>
+                        <input type="file" name="logo" class="form-control-file" value="{{ $work->logo }}" >
+                    </div>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" value="{{ $work->name }}" >
+                    </div>
+                    <div class="form-group">
+                        <label>Link</label>
+                        <input type="text" name="link" class="form-control" value="{{ $work->link }}" >
+                    </div>
+                    <div class="form-group">
+                        <label>Type</label>
+                        <input type="text" name="type" class="form-control" value="{{ $work->type }}" >
                     </div>
                 </div>
-            </div>
+                <div class="modal-footer bg-whitesmoke br">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
 </div>
-@endsection

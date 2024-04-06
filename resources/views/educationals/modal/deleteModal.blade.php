@@ -24,9 +24,4 @@
     </div>
 </div>
 
-<script>
-    function openDeleteModal(educationalId) {
-        var modal = document.getElementById('deleteModal' + educationalId);
-        modal.classList.add('show');
-    }
-</script>
+

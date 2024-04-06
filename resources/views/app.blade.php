@@ -10,6 +10,8 @@
 @include('layouts.sidebar')
 <!------End of Sidebar Content------->
 
+@include('profile.edit')
+
 @yield('content')
 
 @include('layouts.footer')

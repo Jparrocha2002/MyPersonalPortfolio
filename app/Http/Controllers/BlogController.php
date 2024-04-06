@@ -23,7 +23,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blogs.create');
+        //
     }
 
     /**
@@ -54,9 +54,7 @@ class BlogController extends Controller
      */
     public function show(string $id)
     {
-        $blogs = Blog::findOrFail($id);
-  
-        return view('blogs.show', compact('blogs'));
+       //
     }
 
     /**
@@ -64,9 +62,7 @@ class BlogController extends Controller
      */
     public function edit(string $id)
     {
-        $blogs = Blog::findOrFail($id);
-  
-        return view('blogs.edit', compact('blogs'));
+       //
     }
 
     /**
