@@ -88,6 +88,9 @@
                                     <a class="nav-link" href="#mh-blog">Blog</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="#mh-webinar">Webinar</a>
+                                </li>
+                                <li class="nav-item">
                                    <a class="nav-link" href="#mh-contact">Contact</a>
                                 </li>
                             @if (Route::has('login'))
@@ -348,7 +351,7 @@
                          <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <img src="{{ asset('storage/' . $blog->blog_img ) }}" alt="" class="img-fluid">
                             <div class="blog-inner">
-                                <h2><a href="blog-single.html">{{ $blog->title }}</a></h2>
+                                <h2><a href="#">{{ $blog->title }}</a></h2>
                                 <div class="mh-blog-post-info">
                                     <ul>
                                         <li><strong>Post On</strong><a href="#">{{ $blog->date }}</a></li>
@@ -365,6 +368,33 @@
             </div>
         </section>        
         
+
+        <section class="mh-blog" id="mh-webinar">
+            <div class="container">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Webinar/Seminar</h3>
+                    </div>
+                    @foreach($webinars as $webinar)
+                    <div class="col-sm-12 col-md-4">
+                         <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
+                            <img src="{{ asset('storage/' . $webinar->webinar_img ) }}" alt="" class="img-fluid">
+                            <div class="blog-inner">
+                                <h2><a href="#">{{ $webinar->agenda }}</a></h2>
+                                <div class="mh-blog-post-info">
+                                    <ul>
+                                        <li><strong>Post On</strong><a href="#">{{ $webinar->date }}</a></li>
+                                        <li><strong>By</strong><a href="#">{{ $webinar->host_name }}</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>    
+
         <!--
         ===================
            TESTIMONIALS

@@ -11,7 +11,7 @@ use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\WebinarController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +47,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('blogs', BlogController::class);
 
     Route::resource('contacts', ContactController::class);
+
+    Route::resource('webinars', WebinarController::class);
 
     Route::resource('/', front_endController::class);
 

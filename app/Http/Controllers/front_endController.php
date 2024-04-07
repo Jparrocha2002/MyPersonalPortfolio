@@ -10,6 +10,7 @@ use App\Models\Skills;
 use App\Models\Educational;
 use App\Models\Experience;
 use App\Models\Blog;
+use App\Models\Webinar;
 
 
 
@@ -33,9 +34,12 @@ class front_endController extends Controller
 
         $blogs = Blog::all();
 
+        $webinars = Webinar::all();
+
         // Pass the fetched data to the front-end view
         return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works
-        , 'educationals' => $educationals, 'experiences' => $experiences, 'blogs' => $blogs]);
+        , 'educationals' => $educationals, 'experiences' => $experiences, 'blogs' => $blogs
+        , 'webinars' => $webinars]);
     }
 
     /**
