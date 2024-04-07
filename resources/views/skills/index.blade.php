@@ -50,7 +50,7 @@
                                         @endforeach
                                         @else
                                         <tr>
-                                            <td colspan="5" class="text-center">No Skill found!</td>
+                                            <td colspan="5" class="text-center">No Skill Record found!</td>
                                         </tr>
                                         @endif
                                     

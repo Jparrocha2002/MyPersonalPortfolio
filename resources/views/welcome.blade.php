@@ -147,7 +147,7 @@
                                     @if($user->avatar)
                                         <img src="{{ asset('storage/' . $user->avatar) }}" alt="Default Profile Picture" class="img-fluid">
                                     @else
-                                        <img src="{{ asset('assets/img/profile1.jpg') }}" alt="Default Profile Picture" class="img-fluid">
+                                        <img src="{{ asset('assets/img/user1.jpg') }}" alt="Default Profile Picture" class="img-fluid">
                                     @endif
                                 </div>
                             </div>

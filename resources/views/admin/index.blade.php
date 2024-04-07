@@ -44,7 +44,7 @@
                                             </td>
                                             @else
                                             <td>
-                                                <img src="{{ asset('assets/img/user.png') }}" alt="avatar" style="width: 40px; height:40px;" class="img-profile rounded-circle">
+                                                <img src="{{ asset('assets/img/user1.jpg') }}" alt="avatar" style="width: 40px; height:40px;" class="img-profile rounded-circle">
                                             </td>
                                             @endif
                                             <td>{{ $user->name }}</td>
@@ -63,7 +63,7 @@
                                         @endforeach
                                         @else
                                         <tr>
-                                            <td colspan="5" class="text-center">No User found!</td>
+                                            <td colspan="5" class="text-center">No User Record found!</td>
                                         </tr>
                                         @endif
                                     

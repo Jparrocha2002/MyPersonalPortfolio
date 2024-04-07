@@ -42,7 +42,7 @@
                                             @if(Auth::user()->role == 'admin')
                                             <td>
                                                 <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$work->id}}">
-                                                    <i class="fas fa-trash"></i>
+                                                    <i class="fas fa-edit"></i>
                                                 </a>
 
                                                 <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$work->id}}">
@@ -55,10 +55,9 @@
                                         @endforeach
                                         @else
                                         <tr>
-                                            <td colspan="5" class="text-center">No work found!</td>
+                                            <td colspan="5" class="text-center">No Work Record found!</td>
                                         </tr>
                                         @endif
-                                    
                                 </table>
                             </div>
                         </div>

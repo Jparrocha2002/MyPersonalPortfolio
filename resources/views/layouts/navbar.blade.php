@@ -12,14 +12,6 @@
                 <i data-feather="maximize"></i>
               </a></li>
             <li>
-              <form class="form-inline mr-auto">
-                <div class="search-element">
-                  <input class="form-control" type="search" placeholder="Search" aria-label="Search" data-width="200">
-                  <button class="btn" type="submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-              </form>
             </li>
           </ul>
         </div>
@@ -48,11 +40,8 @@
             <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
               <div class="dropdown-header">
                 Notifications
-                <div class="float-right">
-                  <a href="#">Mark All As Read</a>
-                </div>
               </div>
-              <div class="dropdown-list-content dropdown-list-icons">
+              <!-- <div class="dropdown-list-content dropdown-list-icons">
                 <a href="#" class="dropdown-item dropdown-item-unread"> <span
                     class="dropdown-item-icon bg-primary text-white"> <i class="fas
 												fa-code"></i>
@@ -89,14 +78,14 @@
               <div class="dropdown-footer text-center">
                 <a href="#">View All <i class="fas fa-chevron-right"></i></a>
               </div>
-            </div>
+            </div> -->
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown"
               class="nav-link dropdown-toggle nav-link-lg nav-link-user"> 
               @if(Auth::user()->avatar)
                   <img src="{{asset('storage/' . Auth()->user()->avatar)}}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
               @else
-                  <img src="{{ asset('assets/img/user.png') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
+                  <img src="{{ asset('assets/img/user1.jpg') }}" alt="Default Profile Picture" style="width: 40px; height:40px;" class="user-img-radious-style">
               @endif
               <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">

@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <div class="badge badge-success">{{ Auth::user()->role }}</div>
+            <a href="{{ route('home') }}"> <div class="badge badge-success">{{ Auth::user()->role }}</div>
             </a>
           </div>
           <ul class="sidebar-menu">

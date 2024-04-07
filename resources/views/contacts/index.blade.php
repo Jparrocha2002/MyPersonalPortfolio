@@ -37,7 +37,7 @@
                                             @endforeach
                                         @else
                                             <tr>
-                                                <td colspan="6" class="text-center">No Blog Record found!</td>
+                                                <td colspan="6" class="text-center">No Message Record found!</td>
                                             </tr>
                                         @endif
                                     </tbody>
