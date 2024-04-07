@@ -215,7 +215,7 @@
         ===================
         -->
         <section class="mh-skills-tag" id="mh-skills">
-    <div class="container">
+        <div class="container">
         <div class="row section-separator">
             <div class="col-sm-12">
             <div class="section-title text-center col-sm-12">
@@ -368,6 +368,11 @@
             </div>
         </section>        
         
+        <!--
+        ===================
+           Webinar
+        ===================
+        -->
 
         <section class="mh-blog" id="mh-webinar">
             <div class="container">
@@ -481,44 +486,84 @@
            FOOTER 1
         ===================
         -->
-        <footer class="mh-footer" id="mh-contact">
-            <div class="map-image image-bg">
-                <div class="container">
-                    <div class="row section-separator" style="justify-content: center;">
-                        <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                            <h3>Contact Me</h3>
-                        </div>
-                        
-                        <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
-                             @csrf
-                                <div id="msgSubmit" class="h3 text-center hidden"></div>
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-12">
-                                        <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+        <footer class="mh-footer mh-footer-3" id="mh-contact">
+            <div class="container-fluid">
+                <div class="row section-separator">
+                    <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                        <h3>Contact Me</h3>
+                    </div>
+                    <div class="map-image image-bg col-sm-12">
+                        <div class="container mt-30">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 mh-footer-address">
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item dark-bg shadow-1 media wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                            <div class="each-icon">
+                                            @foreach($admin as $item)
+                                                <i class="fa fa-location-arrow"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Address</h4>
+                                                <address>
+                                                      {{ $item->address }}  <br> 
+                                                </address>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-sm-12">
-                                        <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item media dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                            <div class="each-icon">
+                                                <i class="fa fa-envelope-o"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Email</h4>
+                                                <a href="#">{{ $item->email }}</a><br>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                    <div class="col-sm-12 xs-no-padding">
+                                        <div class="mh-address-footer-item media dark-bg shadow-1 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s">
+                                            <div class="each-icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <div class="each-info media-body">
+                                                <h4>Phone</h4>
+                                                <a href="#">+{{ $item->phone }}</a><br>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-12">
-                                        <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
-                                    </div>
-                                    <!-- Subject Button -->
-                                    <div class="btn-form col-sm-12">
-                                        <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
-                                    </div>
+                                    @endforeach
                                 </div>
-                            </form>
-                        </div>
+                                <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                    <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                        @csrf
+                                           <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                           <div class="row">
+                                               <div class="col-md-6 col-sm-12">
+                                                   <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                                               </div>
+                                               <div class="col-md-6 col-sm-12">
+                                                   <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                               </div>
+                                               <div class="col-sm-12">
+                                                   <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                               </div>
+                                               <div class="col-sm-12">
+                                                   <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                               </div>
+                                               <!-- Subject Button -->
+                                               <div class="btn-form col-sm-12">
+                                                   <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                               </div>
+                                           </div>
+                                       </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>     
-    </div>
+        </footer>
     
     <!--
     ==============
