@@ -23,10 +23,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function openDeleteModal(workId) {
-        var modal = document.getElementById('deleteModal' + workId);
-        modal.classList.add('show');
-    }
-</script>

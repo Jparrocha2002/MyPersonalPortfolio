@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $contacts->save();
 
-        return redirect('http://127.0.0.1:8000/');
+        return redirect()->to('http://127.0.0.1:8000/');
     }
 
     /**
@@ -71,6 +71,10 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $contacts = Contact::findOrFail($id);
+  
+        $contacts->delete();
+  
+        return redirect()->route('contacts.index')->with('success', 'Deleted successfully');
     }
 }

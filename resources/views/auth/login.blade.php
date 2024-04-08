@@ -58,9 +58,6 @@
                 <span class="mx-2 text-gray-700 dark:text-gray-400">or</span>
                 <a href="{{ route('register') }}" class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline">Create account</a>
             </div> -->
-            <p class="mt-4"><a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="./forgot-password.html">
-                  Forgot your password?</a>
-              </p>
               <p class="mt-1"><a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline" href="{{ route('register') }}">
                   Create account </a>
           </div>

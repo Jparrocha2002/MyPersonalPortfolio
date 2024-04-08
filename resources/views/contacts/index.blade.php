@@ -21,7 +21,9 @@
                                             <th>Last Name</th>
                                             <th>Email</th>
                                             <th>Message</th>
-                                            <!-- <th>Action</th> -->
+                                            @if(Auth::user()->role == 'admin')
+                                            <th>Action</th>
+                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -33,6 +35,13 @@
                                                 <td>{{ $contact->last_name }}</td>
                                                 <td>{{ $contact->email }}</td>
                                                 <td>{{ $contact->message }}</td>
+                                                @if(Auth::user()->role == 'admin')
+                                                <td>
+                                                    <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$contact->id}}">
+                                                        <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                                @endif
                                             </tr>
                                             @endforeach
                                         @else
@@ -49,6 +58,9 @@
             </div>
         </div>
     </section>
+    @foreach ($contacts as $contact)
+        @include('contacts.modal.deleteModal')
+    @endforeach
 </div>
 
 @endsection

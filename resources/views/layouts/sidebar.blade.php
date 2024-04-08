@@ -1,8 +1,11 @@
 <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('home') }}"> <div class="badge badge-success">{{ Auth::user()->role }}</div>
-            </a>
+            @if(Auth::user()->role === 'admin')
+            <a href="{{ route('home') }}"> <div class="badge badge-success">Admin</div></a>
+            @else
+            <a href="{{ route('home') }}"> <div class="badge badge-primary">Spectator</div></a>
+            @endif
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
