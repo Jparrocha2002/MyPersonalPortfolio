@@ -535,6 +535,11 @@
                                     @endforeach
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
+                                @if(session('success'))
+                                    <div class="alert alert-info">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                                     <form action="{{ route('contacts.store') }}" method="POST" enctype="multipart/form-data" class="single-form quate-form wow fadeInUp" data-toggle="validator">
                                         @csrf
                                            <div id="msgSubmit" class="h3 text-center hidden"></div>

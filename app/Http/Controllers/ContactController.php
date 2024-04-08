@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $contacts->save();
 
-        return redirect()->to('http://127.0.0.1:8000/');
+        return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
 
     /**
@@ -75,6 +75,6 @@ class ContactController extends Controller
   
         $contacts->delete();
   
-        return redirect()->route('contacts.index')->with('success', 'Deleted successfully');
+        return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
 }
