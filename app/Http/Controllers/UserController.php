@@ -92,4 +92,5 @@ class UserController extends Controller
   
         return redirect()->route('admin.index')->with('success', 'User deleted successfully');
     }
+
 }
