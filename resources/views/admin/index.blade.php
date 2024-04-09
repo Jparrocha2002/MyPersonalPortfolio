@@ -11,6 +11,11 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
                             <h4>User</h4>
+                                @if(session('success'))
+                                    <div class="alert alert-danger">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                             <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add User</a>
                         </div>
                         <div class="card-body">

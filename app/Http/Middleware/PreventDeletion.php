@@ -13,7 +13,7 @@ class PreventDeletion
         $user = Auth::user();
 
         if ($user && $request->route('admin') == $user->id) {
-            abort(403, 'You cannot delete your own account.');
+            return redirect()->route('admin.index')->with('success', 'You Cannot Delete Your Own Account');
         }
 
         return $next($request);
