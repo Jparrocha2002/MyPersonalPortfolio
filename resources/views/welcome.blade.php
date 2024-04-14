@@ -535,7 +535,7 @@
                                     @endforeach
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <form action="" onclick="maintenance()" method="post" class="single-form quate-form wow fadeInUp" data-toggle="validator">
+                                    <form action="" onclick="maintenance()" class="single-form quate-form wow fadeInUp">
                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
                                            <div class="row">
                                                <div class="col-md-6 col-sm-12">
