@@ -535,7 +535,7 @@
                                     @endforeach
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <!-- <form action="" class="single-form quate-form wow fadeInUp" data-toggle="validator"> -->
+                                    <form action="" onclick="maintenance()" method="post" class="single-form quate-form wow fadeInUp" data-toggle="validator">
                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
                                            <div class="row">
                                                <div class="col-md-6 col-sm-12">
@@ -552,10 +552,10 @@
                                                </div>
                                                <!-- Subject Button -->
                                                <div class="btn-form col-sm-12">
-                                                   <button type="submit" onclick="maintenance()" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
+                                                   <button type="submit" class="btn btn-fill btn-block" id="form-submit">Send Message</button>
                                                </div>
                                            </div>
-                                       <!-- </form> -->
+                                       </form>
                                 </div>
                             </div>
                         </div>
