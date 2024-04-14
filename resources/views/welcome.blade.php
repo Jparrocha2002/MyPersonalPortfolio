@@ -539,16 +539,16 @@
                                            <div id="msgSubmit" class="h3 text-center hidden"></div>
                                            <div class="row">
                                                <div class="col-md-6 col-sm-12">
-                                                   <input name="first_name" class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                                                   <input class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
                                                </div>
                                                <div class="col-md-6 col-sm-12">
-                                                   <input name="last_name" class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                                   <input class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
                                                </div>
                                                <div class="col-sm-12">
-                                                   <input name="email" class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                                   <input class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
                                                </div>
                                                <div class="col-sm-12">
-                                                   <textarea name="message" class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                                   <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
                                                </div>
                                                <!-- Subject Button -->
                                                <div class="btn-form col-sm-12">
