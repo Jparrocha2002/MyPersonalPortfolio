@@ -10,10 +10,12 @@ class PreventDeletion
 {
     public function handle(Request $request, Closure $next)
     {
-        $user = Auth::user();
+        if ($request->route()->getName() === 'admin.destroy') {
+            $user = Auth::user();
 
-        if ($user && $request->route('admin') == $user->id) {
-            return redirect()->route('admin.index')->with('success', 'You Cannot Delete Your Own Account');
+            if ($user && $request->route('admin') == $user->id) {
+                return redirect()->back()->with('success', 'You cannot delete your own account.');
+            }
         }
 
         return $next($request);

@@ -10,15 +10,15 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
-                            <h4>User</h4>
-                                @if(session('success'))
-                                    <div class="alert alert-danger">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
+                            <h4>User</h4>     
                             <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add User</a>
                         </div>
                         <div class="card-body">
+                                @if(session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
                             <div class="table-responsive">
                                 <table class="table table-bordered table-md">
                                     <thead>

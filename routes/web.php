@@ -10,7 +10,6 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EducationalController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ContactController;
 use App\Http\Controllers\WebinarController;
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +35,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
         Route::resource('admin', UserController::class)->middleware('PreventDeletion');
     });
     
-    
     Route::resource('skills', SkillController::class);
 
     Route::resource('works', WorkController::class);
@@ -46,8 +44,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('experiences', ExperienceController::class);
 
     Route::resource('blogs', BlogController::class);
-
-    Route::resource('contacts', ContactController::class);
 
     Route::resource('webinars', WebinarController::class);
 

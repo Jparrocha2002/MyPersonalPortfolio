@@ -9,7 +9,6 @@ use App\Models\Skills;
 use App\Models\Experience;
 use App\Models\Educational;
 use App\Models\Works;
-use App\Models\Contact;
 use App\Models\Webinar;
 
 
@@ -38,9 +37,8 @@ class HomeController extends Controller
         $workCount = Works::count();
         $blogCount = Blog::count();
         $skillCount = Skills::count();
-        $messageCount = Contact::count();
         $webinarCount = Webinar::count();
         
-        return view('home', compact('userCount','experienceCount','educationalCount','workCount','blogCount','skillCount','messageCount','webinarCount'));
+        return view('home', compact('userCount','experienceCount','educationalCount','workCount','blogCount','skillCount','webinarCount'));
     }
 } 

@@ -5,3 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
         bar.style.setProperty('--progress', progress + '%');
     });
 });
+
+function maintenance()
+{
+    alert('This field is under maintenance, sorry :{');
+}
