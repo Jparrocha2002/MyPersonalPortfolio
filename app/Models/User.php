@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Carbon;
 
 class User extends Authenticatable
 {
@@ -24,7 +25,6 @@ class User extends Authenticatable
         'job',
         'email',
         'birthday',
-        'age',
         'gender',
         'phone',
         'address',
@@ -61,5 +61,10 @@ class User extends Authenticatable
     public function hasRole($role)
     {
         return $this->role === $role;
+    }
+
+    public function getAgeAttribute()
+    {
+        return Carbon::parse($this->attributes['birthday'])->age;
     }
 }

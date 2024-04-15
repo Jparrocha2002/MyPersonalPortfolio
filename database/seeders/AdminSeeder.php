@@ -19,8 +19,7 @@ class AdminSeeder extends Seeder
         $name = 'Jerry Parrocha';
         $job = 'Future Web Developer';
         $email = 'j.parrocha@gmail.com';
-        $birthday = 'November 23, 2002';
-        $age = '21';
+        $birthday = null;
         $gender = 'Male';
         $phone = '639638753244';
         $address = 'Western Poblacion, Hilongos, Leyte';
@@ -39,7 +38,6 @@ class AdminSeeder extends Seeder
                 'job' => $job,
                 'email' => $email,
                 'birthday' => $birthday,
-                'age' => $age,
                 'gender' => $gender,
                 'phone' => $phone,
                 'address' => $address,

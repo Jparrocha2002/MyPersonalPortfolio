@@ -12,10 +12,16 @@ class BlogController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $blogs = Blog::orderBy('created_at', 'DESC')->get();
+    {  
+        if(empty(auth()->user()->role))
+        {
+            abort(404);
+        } else {
+            $blogs = Blog::orderBy('created_at', 'DESC')->get();
   
-        return view('blogs.index', compact('blogs'));
+            return view('blogs.index', compact('blogs'));
+        }
+       
     }
   
     /**

@@ -9,9 +9,14 @@ class UserController extends Controller
 {
     public function index()
     {
+        if(empty(auth()->user()->role))
+        {
+            abort(404);
+        } else {
         $admin = User::orderBy('created_at', 'DESC')->get();
   
         return view('admin.index', compact('admin'));
+        }
     }
   
     /**
@@ -92,7 +97,7 @@ class UserController extends Controller
         {
             return redirect()->route('admin.index')->with('success', 'You Cannot Delete your own account');
         }
-  
+
         $admin->delete();
   
         return redirect()->route('admin.index')->with('success', 'User deleted successfully');

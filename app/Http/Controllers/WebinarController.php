@@ -12,9 +12,14 @@ class WebinarController extends Controller
      */
     public function index()
     {
+        if(empty(auth()->user()->role))
+        {
+            abort(404);
+        } else {
         $webinars = Webinar::orderBy('created_at', 'DESC')->get();
   
         return view('webinars.index', compact('webinars'));
+        }
     }
   
     /**

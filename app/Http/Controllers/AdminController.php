@@ -63,7 +63,6 @@ class AdminController extends Controller
         $profile->email = $request->input('email');
         $profile->job = $request->input('job');
         $profile->birthday = $request->input('birthday');
-        $profile->age = $request->input('age');
         $profile->gender = $request->input('gender');
         $profile->phone = $request->input('phone');
         $profile->address = $request->input('address');

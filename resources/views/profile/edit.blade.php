@@ -49,7 +49,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Age</label>
-                                <input type="text" name="age" class="form-control" value="{{ Auth::user()->age }}" >
+                                <input type="number" name="age" class="form-control" value="{{ Auth::user()->age }}" disabled>
                             </div>
                         </div>
                         <div class="col-md-4">
