@@ -87,6 +87,11 @@ class UserController extends Controller
     public function destroy(string $id)
     {
         $admin = User::findOrFail($id);
+
+        if($admin->role == 'admin')
+        {
+            return redirect()->route('admin.index')->with('success', 'You Cannot Delete your own account');
+        }
   
         $admin->delete();
   
