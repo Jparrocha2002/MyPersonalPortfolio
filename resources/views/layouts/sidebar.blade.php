@@ -23,6 +23,7 @@
               <li><a class="nav-link" href="{{ route('experiences.index') }}"><i data-feather="grid"></i><span>Experience</span></a></li>
               <li><a class="nav-link" href="{{ route('blogs.index') }}"><i data-feather="grid"></i><span>Blogs</span></a></li>
               <li><a class="nav-link" href="{{ route('webinars.index') }}"><i data-feather="grid"></i><span>Webinar</span></a></li>
-          </ul>
+              <li><a class="nav-link" href="{{ route('contacts.index') }}"><i data-feather="grid"></i><span>Message</span></a></li>
+            </ul>
         </aside>
 </div>

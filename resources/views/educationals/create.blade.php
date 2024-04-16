@@ -19,7 +19,7 @@
                         <input type="text" name="school_name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Date</label>
+                        <label>Year Graduated</label>
                         <input type="text" name="date" class="form-control">
                     </div>
                     <div class="form-group">

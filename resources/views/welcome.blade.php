@@ -535,20 +535,21 @@
                                     @endforeach
                                 </div>
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                                    <form action="" onclick="maintenance()" class="single-form quate-form wow fadeInUp">
-                                           <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                    <form action="{{ route('contacts.store') }}" method="POST" class="single-form quate-form wow fadeInUp">
+                                        @csrf       
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
                                            <div class="row">
                                                <div class="col-md-6 col-sm-12">
-                                                   <input class="contact-name form-control" id="name" type="text" placeholder="First Name" required>
+                                                   <input class="contact-name form-control" name="first_name" id="name" type="text" placeholder="First Name" required>
                                                </div>
                                                <div class="col-md-6 col-sm-12">
-                                                   <input class="contact-email form-control" id="L_name" type="text" placeholder="Last Name" required>
+                                                   <input class="contact-email form-control" name="last_name" id="L_name" type="text" placeholder="Last Name" required>
                                                </div>
                                                <div class="col-sm-12">
-                                                   <input class="contact-subject form-control" id="email" type="email" placeholder="Your Email" required>
+                                                   <input class="contact-subject form-control" name="email" id="email" type="email" placeholder="Your Email" required>
                                                </div>
                                                <div class="col-sm-12">
-                                                   <textarea class="contact-message" id="message" rows="6" placeholder="Your Message" required></textarea>
+                                                   <textarea class="contact-message" name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
                                                </div>
                                                <!-- Subject Button -->
                                                <div class="btn-form col-sm-12">

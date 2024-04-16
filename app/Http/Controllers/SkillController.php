@@ -42,7 +42,7 @@ class SkillController extends Controller
 
         $skills->save();
 
-        return redirect()->route('skills.index')->with('success', 'Skill created successfully');
+        return redirect()->route('skills.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -73,7 +73,7 @@ class SkillController extends Controller
 
         $skills->save();
 
-        return redirect()->route('skills.index')->with('success', 'Skill Updated successfully');
+        return redirect()->route('skills.index')->with('update', 'Updated Successfully');
     }
 
     /**
@@ -85,6 +85,6 @@ class SkillController extends Controller
   
         $skills->delete();
   
-        return redirect()->route('skills.index')->with('success', 'Skill deleted successfully');
+        return redirect()->route('skills.index')->with('error', 'Deleted Successfully');
     }
 }

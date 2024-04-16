@@ -14,11 +14,7 @@
                             <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createModal">Add User</a>
                         </div>
                         <div class="card-body">
-                                @if(session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
-                                    </div>
-                                @endif
+                            @include('layouts.alert')
                             <div class="table-responsive">
                                 <table class="table table-bordered table-md">
                                     <thead>

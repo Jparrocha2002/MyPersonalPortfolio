@@ -49,7 +49,7 @@ class WebinarController extends Controller
 
         $webinars->save();
 
-        return redirect()->route('webinars.index')->with('success', 'Blog created successfully');
+        return redirect()->route('webinars.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -87,7 +87,7 @@ class WebinarController extends Controller
 
         $webinars->save();
 
-        return redirect()->route('webinars.index')->with('success', 'Blog Updated successfully');
+        return redirect()->route('webinars.index')->with('update', 'Updated Successfully');
     }
 
     /**
@@ -99,6 +99,6 @@ class WebinarController extends Controller
   
         $webinars->delete();
   
-        return redirect()->route('webinars.index')->with('success', 'Blog deleted successfully');
+        return redirect()->route('webinars.index')->with('error', 'Deleted Successfully');
     }
 }

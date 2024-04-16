@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-@include('educationals.create')
 <!-- Main Content -->
 <div class="main-content">
     <section class="section">
@@ -10,10 +9,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between align-items-center mb-4">
-                            <h4>Educational Attainment</h4>
-                            @if(Auth::user()->role == 'admin')
-                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createEducationalModal">Add Educational</a>
-                            @endif
+                            <h4>Messages</h4>
                         </div>
                         <div class="card-body">
                             @include('layouts.alert')
@@ -22,30 +18,27 @@
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>School Type</th>
-                                            <th>School Name</th>
-                                            <th>Year Graduated</th>
-                                            <th>Description</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Email</th>
+                                            <th>Messages</th>
                                             @if(Auth::user()->role == 'admin')
                                             <th>Action</th>
                                             @endif
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @if($educationals->count() > 0)
-                                            @foreach ($educationals as $educational)
+                                        @if($contacts->count() > 0)
+                                            @foreach ($contacts as $contact)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $educational->school_type }}</td>
-                                                <td>{{ $educational->school_name }}</td>
-                                                <td>{{ $educational->date }}</td>
-                                                <td>{{ $educational->description }}</td>
+                                                <td>{{ $contact->first_name }}</td>
+                                                <td>{{ $contact->last_name }}</td>
+                                                <td>{{ $contact->email }}</td>
+                                                <td>{{ $contact->message }}</td>
                                                 @if(Auth::user()->role == 'admin')
                                                 <td>
-                                                <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editEducationalModal{{$educational->id}}">
-                                                    <i class="fas fa-edit"></i>
-                                                </a>
-                                                    <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$educational->id}}">
+                                                    <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$contact->id}}">
                                                         <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -54,23 +47,20 @@
                                             @endforeach
                                         @else
                                             <tr>
-                                                <td colspan="6" class="text-center">No Educational Record found!</td>
+                                                <td colspan="6" class="text-center">No Message Record found!</td>
                                             </tr>
                                         @endif
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!------Crud Modals------>
-    @foreach($educationals as $educational)
-        @include('educationals.edit')
-        @include('educationals.modal.deleteModal')
+    @foreach($contacts as $contact)
+        @include('contacts.modal.deleteModal')
     @endforeach
 </div>
 

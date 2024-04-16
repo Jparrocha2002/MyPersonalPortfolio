@@ -77,7 +77,7 @@ class ExperienceController extends Controller
 
         $experiences->save();
 
-        return redirect()->route('experiences.index')->with('success','Updated Successfully');
+        return redirect()->route('experiences.index')->with('update','Updated Successfully');
     
     }
 
@@ -90,6 +90,6 @@ class ExperienceController extends Controller
         
         $experiences->delete();
 
-        return redirect()->route('experiences.index')->with('success', 'Deleted Successfully');
+        return redirect()->route('experiences.index')->with('error', 'Deleted Successfully');
     }
 }

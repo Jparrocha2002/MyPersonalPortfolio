@@ -16,6 +16,7 @@
                             @endif
                         </div>
                         <div class="card-body">
+                            @include('layouts.alert')
                             <div class="table-responsive">
                                 <table class="table table-bordered table-md">
                                     <thead>

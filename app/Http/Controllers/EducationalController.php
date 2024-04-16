@@ -44,7 +44,7 @@ class EducationalController extends Controller
 
         $educationals->save();
 
-        return redirect()->route('educationals.index')->with('success', 'Educational created successfully');
+        return redirect()->route('educationals.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -77,7 +77,7 @@ class EducationalController extends Controller
 
         $educationals->save();
 
-        return redirect()->route('educationals.index')->with('success', 'Educational Updated successfully');
+        return redirect()->route('educationals.index')->with('update', 'Updated Successfully');
     }
 
     /**
@@ -89,6 +89,6 @@ class EducationalController extends Controller
   
         $educationals->delete();
   
-        return redirect()->route('educationals.index')->with('success', 'Educational deleted successfully');
+        return redirect()->route('educationals.index')->with('error', 'Deleted Successfully');
     }
 }

@@ -45,7 +45,7 @@ class UserController extends Controller
 
         $admin->save();
 
-        return redirect()->route('admin.index')->with('success', 'User created successfully');
+        return redirect()->route('admin.index')->with('success', 'Added Successfully');
     }
   
     /**
@@ -82,7 +82,7 @@ class UserController extends Controller
 
     $admin->save();
 
-    return redirect()->route('admin.index')->with('success', 'User updated successfully');
+    return redirect()->route('admin.index')->with('update', 'Updated Successfully');
 
     }
   
@@ -95,12 +95,12 @@ class UserController extends Controller
 
         if($admin->role == 'admin')
         {
-            return redirect()->route('admin.index')->with('success', 'You Cannot Delete your own account');
+            return redirect()->route('admin.index')->with('error', 'You Cannot Delete your own account');
         }
 
         $admin->delete();
   
-        return redirect()->route('admin.index')->with('success', 'User deleted successfully');
+        return redirect()->route('admin.index')->with('error', 'Deleted Successfully');
     }
 
 }

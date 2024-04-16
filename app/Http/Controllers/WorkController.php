@@ -16,9 +16,9 @@ class WorkController extends Controller
         {
             abort(404);
         } else {
-        $works = Works::orderBy('created_at', 'DESC')->get();
-  
-        return view('works.index', compact('works'));
+            $works = Works::orderBy('created_at', 'DESC')->get();
+    
+            return view('works.index', compact('works'));
         }
     }
   
@@ -66,7 +66,7 @@ class WorkController extends Controller
     {
         //
     }
-
+    
     /**
      * Update the specified resource in storage.
      */
@@ -85,7 +85,7 @@ class WorkController extends Controller
         
         $works->save();
 
-        return redirect()->route('works.index')->with('success', 'Work Updated successfully');
+        return redirect()->route('works.index')->with('update', 'Work Updated successfully');
     }
 
     /**
@@ -97,6 +97,6 @@ class WorkController extends Controller
   
         $works->delete();
   
-        return redirect()->route('works.index')->with('success', 'Work deleted successfully');
+        return redirect()->route('works.index')->with('error', 'Work deleted successfully');
     }
 }

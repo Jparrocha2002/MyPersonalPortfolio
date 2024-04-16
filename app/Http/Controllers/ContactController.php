@@ -30,7 +30,16 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contacts = new Contact();
+
+        $contacts->first_name = $request->input('first_name');
+        $contacts->last_name = $request->input('last_name');
+        $contacts->email = $request->input('email');
+        $contacts->message = $request->input('message');
+
+        $contacts->save();
+
+        return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
     }
 
     /**
@@ -62,6 +71,10 @@ class ContactController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $contacts = Contact::findorFail($id);
+
+        $contacts->delete();
+
+        return redirect()->route('contacts.index')->with('error', 'Message Deleted Successfully');
     }
 }
