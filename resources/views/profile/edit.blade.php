@@ -107,10 +107,10 @@
                             </div>
                         </div>
                     </div>
-                            <div class="form-group">
-                                <label>Description</label>
-                                <textarea name="description" class="form-control">{{ Auth::user()->description }}</textarea>
-                            </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                        <textarea name="description" class="form-control">{{ Auth::user()->description }}</textarea>
+                    </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

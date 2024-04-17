@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('school_type');
             $table->string('school_name');
             $table->string('date');
-            $table->string('description');
+            $table->string('address');
             $table->timestamps();
         });
     }

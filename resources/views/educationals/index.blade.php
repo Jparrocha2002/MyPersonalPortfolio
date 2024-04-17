@@ -25,7 +25,7 @@
                                             <th>School Type</th>
                                             <th>School Name</th>
                                             <th>Year Graduated</th>
-                                            <th>Description</th>
+                                            <th>Address</th>
                                             @if(Auth::user()->role == 'admin')
                                             <th>Action</th>
                                             @endif
@@ -39,7 +39,7 @@
                                                 <td>{{ $educational->school_type }}</td>
                                                 <td>{{ $educational->school_name }}</td>
                                                 <td>{{ $educational->date }}</td>
-                                                <td>{{ $educational->description }}</td>
+                                                <td>{{ $educational->address }}</td>
                                                 @if(Auth::user()->role == 'admin')
                                                 <td>
                                                 <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editEducationalModal{{$educational->id}}">

@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('date');
             $table->string('author');
             $table->string('content');
-            $table->string('link');
             $table->timestamps();
         });
     }

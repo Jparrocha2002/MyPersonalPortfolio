@@ -40,7 +40,7 @@ class EducationalController extends Controller
         $educationals->school_type = $request->input('school_type');
         $educationals->school_name = $request->input('school_name');
         $educationals->date = $request->input('date');
-        $educationals->description = $request->input('description');
+        $educationals->address = $request->input('address');
 
         $educationals->save();
 
@@ -73,7 +73,7 @@ class EducationalController extends Controller
         $educationals->school_type = $request->input('school_type');
         $educationals->school_name = $request->input('school_name');
         $educationals->date = $request->input('date');
-        $educationals->description = $request->input('description');
+        $educationals->address = $request->input('address');
 
         $educationals->save();
 

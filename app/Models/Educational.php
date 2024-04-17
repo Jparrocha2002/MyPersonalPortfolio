@@ -13,6 +13,6 @@ class Educational extends Model
         'school_type',
         'school_name',
         'date',
-        'description'
+        'address'
     ];
 }

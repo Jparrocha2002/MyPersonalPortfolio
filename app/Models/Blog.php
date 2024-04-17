@@ -15,6 +15,5 @@ class Blog extends Model
         'date',
         'author',
         'content',
-        'link',
     ];
 }

@@ -27,7 +27,6 @@
                                             <th>Uploaded</th>
                                             <th>Author</th>
                                             <th>Content</th>
-                                            <th>Link</th>
                                             @if(Auth::user()->role == 'admin')
                                             <th>Action</th>
                                             @endif
@@ -43,7 +42,6 @@
                                                 <td>{{ $blog->date }}</td>
                                                 <td>{{ $blog->author }}</td>
                                                 <td>{{ $blog->content }}</td>   
-                                                <td>{{ $blog->link }}</td>
                                                 @if(Auth::user()->role == 'admin')
                                                 <td>
                                                     <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$blog->id}}">

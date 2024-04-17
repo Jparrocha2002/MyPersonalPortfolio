@@ -21,10 +21,7 @@
                                             <th>First Name</th>
                                             <th>Last Name</th>
                                             <th>Email</th>
-                                            <th>Messages</th>
-                                            @if(Auth::user()->role == 'admin')
                                             <th>Action</th>
-                                            @endif
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -35,11 +32,16 @@
                                                 <td>{{ $contact->first_name }}</td>
                                                 <td>{{ $contact->last_name }}</td>
                                                 <td>{{ $contact->email }}</td>
-                                                <td>{{ $contact->message }}</td>
                                                 @if(Auth::user()->role == 'admin')
                                                 <td>
                                                     <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$contact->id}}">
                                                         <i class="fas fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                                @else
+                                                <td>
+                                                    <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#message{{$contact->id}}">
+                                                        <i class="fas fa-comment"></i>
                                                     </a>
                                                 </td>
                                                 @endif
@@ -60,6 +62,7 @@
         </div>
     </section>
     @foreach($contacts as $contact)
+        @include('contacts.modal.view_message')
         @include('contacts.modal.deleteModal')
     @endforeach
 </div>

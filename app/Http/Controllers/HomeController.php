@@ -31,7 +31,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $userCount = User::count();
+        $spectatorCount = User::where('role', 'spectator')->count();
+        $admin = User::where('role', 'admin')->count();
         $experienceCount = Experience::count();
         $educationalCount = Educational::count();
         $workCount = Works::count();
@@ -39,6 +40,6 @@ class HomeController extends Controller
         $skillCount = Skills::count();
         $webinarCount = Webinar::count();
         
-        return view('home', compact('userCount','experienceCount','educationalCount','workCount','blogCount','skillCount','webinarCount'));
+        return view('home', compact('spectatorCount','admin','experienceCount','educationalCount','workCount','blogCount','skillCount','webinarCount'));
     }
 } 

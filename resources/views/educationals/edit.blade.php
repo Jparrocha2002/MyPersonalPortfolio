@@ -24,8 +24,8 @@
                         <input type="text" name="date" class="form-control" value="{{ $educational->date }}">
                     </div>
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" class="form-control">{{ $educational->description }}</textarea>
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control" value="{{ $educational->address }}">
                     </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">

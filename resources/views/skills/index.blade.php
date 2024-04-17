@@ -35,7 +35,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $skill->skill_name }}</td>
-                                            <td>{{ $skill->percent }}</td>
+                                            <td>{{ $skill->percent }}%</td>
                                             @if(Auth::user()->role == 'admin')
                                             <td>
                                                 <a href="#" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal{{$skill->id}}">

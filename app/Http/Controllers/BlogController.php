@@ -43,7 +43,6 @@ class BlogController extends Controller
         $blogs->date = $request->input('date');
         $blogs->author = $request->input('author');
         $blogs->content = $request->input('content');
-        $blogs->link = $request->input('link');
 
         if ($request->hasFile('blog_img')) {
             $avatarPath = $request->file('blog_img')->store('blog_images', 'public');
@@ -82,7 +81,6 @@ class BlogController extends Controller
         $blogs->date = $request->input('date');
         $blogs->author = $request->input('author');
         $blogs->content = $request->input('content');
-        $blogs->link = $request->input('link');
 
         if($request->hasFile('blog_img'))
         {

@@ -20,11 +20,11 @@
                     </div>
                     <div class="form-group">
                         <label>Year Graduated</label>
-                        <input type="text" name="date" class="form-control">
+                        <input type="number" name="date" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea name="description" class="form-control"></textarea>
+                        <label>Address</label>
+                        <input type="text" name="address" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">

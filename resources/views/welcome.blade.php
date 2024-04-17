@@ -279,6 +279,11 @@
                                  <h3>Work Experience</h3>
                                 <div class="mh-experience-deatils">
                                     <!-- Education Institutes-->
+                                    @if($experiences->isEmpty())
+                                        <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                                            <h4>No Experience</h4>
+                                        </div> 
+                                    @else
                                     @foreach($experiences as $experience)
                                     <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
                                         <h4>{{ $experience->job_title }} at<a href="#"> {{ $experience->company }}</a></h4>
@@ -288,7 +293,8 @@
                                             <li><i class="fa fa-circle"></i> {{ $experience->responsibility }}</li>
                                         </ul>
                                     </div> 
-                                    @endforeach                               
+                                    @endforeach   
+                                    @endif                            
                                 </div>
                             </div>
                         </div>
@@ -311,7 +317,7 @@
                     <div class="part col-sm-12">
                         <div class="portfolio-nav col-sm-12" id="filter-button">
                             <ul>
-                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"> <span>Works</span></li>
+                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"><span>Works</span></li>
                             </ul>
                         </div>
                         <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
@@ -344,22 +350,21 @@
             <div class="container">
                 <div class="row section-separator">
                     <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
-                        <h3>Featured Posts</h3>
+                        <h3>Recent Post</h3>
                     </div>
                     @foreach($blogs as $blog)
                     <div class="col-sm-12 col-md-4">
                          <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="{{ asset('storage/' . $blog->blog_img ) }}" alt="" class="img-fluid">
+                            <img src="{{ asset('storage/' . $blog->blog_img ) }}" alt="" class="img-fluid" style="width: 350px; height: 210px">
                             <div class="blog-inner">
                                 <h2><a href="#">{{ $blog->title }}</a></h2>
                                 <div class="mh-blog-post-info">
                                     <ul>
-                                        <li><strong>Post On</strong><a href="#">{{ $blog->date }}</a></li>
+                                        <li><strong>Posted on</strong><a href="#">{{ $blog->date }}</a></li>
                                         <li><strong>By</strong><a href="#">{{ $blog->author }}</a></li>
                                     </ul>
                                 </div>
                                 <p>{{ $blog->content }}</p>
-                                <a href="{{ $blog->link }}">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -537,7 +542,7 @@
                                 <div class="col-sm-12 col-md-6 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                                     <form action="{{ route('contacts.store') }}" method="POST" class="single-form quate-form wow fadeInUp">
                                         @csrf       
-                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        @include('layouts.alert')
                                            <div class="row">
                                                <div class="col-md-6 col-sm-12">
                                                    <input class="contact-name form-control" name="first_name" id="name" type="text" placeholder="First Name" required>

@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         $contacts->save();
 
-        return redirect()->back()->with('success', 'Your message has been sent. Thank you!');
+        return redirect()->back()->with('info', 'Your message has been sent. Thank you!');
     }
 
     /**

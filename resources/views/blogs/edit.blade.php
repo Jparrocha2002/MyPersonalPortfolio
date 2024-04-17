@@ -31,10 +31,6 @@
                         <label>Content</label>
                         <textarea name="content" class="form-control">{{ $blog->content }}</textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Link</label>
-                        <input type="link" name="link" class="form-control" value="{{ $blog->link }}" >
-                    </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

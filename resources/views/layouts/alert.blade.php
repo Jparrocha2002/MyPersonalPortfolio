@@ -10,4 +10,8 @@
     <div class="alert alert-danger">
         {{ session('error') }}
     </div>
+@elseif(session('info'))
+    <div id="msgSubmit" class="text-center hidden" style="color: skyblue;">
+        {{ session('info') }}
+    </div>
 @endif
