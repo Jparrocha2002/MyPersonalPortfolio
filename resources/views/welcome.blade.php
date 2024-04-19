@@ -102,7 +102,7 @@
                                 <li class="nav-item">
                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
                                 </li>
-                                    @endauth
+                                @endauth
                                 </div>
                             @endif
                             </ul>
@@ -132,7 +132,7 @@
                                 
                                 <ul>
                                     <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s"><i class="fa fa-envelope"></i><a href="mailto:">{{ $user->email }}</a></li>
-                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">+63{{ $user->phone }}</li>
+                                    <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s"><i class="fa fa-phone"></i><a href="callto:">+{{ $user->phone }}</li>
                                     <li class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.6s"><i class="fa fa-map-marker"></i><address>{{ $user->address }}</address></li>
                                 </ul>
                                 
@@ -268,7 +268,7 @@
                                     <div class="mh-education-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                                         <h4>{{ $educational->school_type }} From <a href="#">{{ $educational->school_name }}</a></h4>
                                         <div class="mh-eduyear">{{ $educational->date }}</div>
-                                        <p>{{ $educational->description }}</p>
+                                        <p>{{ $educational->address  }}</p>
                                     </div>
                                     @endforeach
                                 </div>
@@ -309,38 +309,71 @@
         ===================
         -->
         <section class="mh-portfolio" id="mh-portfolio">
-            <div class="container">
-                <div class="row section-separator">
-                    <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
-                        <h3>Recent Portfolio</h3>
-                    </div>
-                    <div class="part col-sm-12">
-                        <div class="portfolio-nav col-sm-12" id="filter-button">
-                            <ul>
-                                <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"><span>Works</span></li>
-                            </ul>
-                        </div>
-                        <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                            <div class="portfolioContainer row">
-                            @foreach($works as $work)
-                                <div class="grid-item col-md-4 col-sm-6 col-xs-12 ui mockup">
-                                    <figure>
-                                        <img src="{{ asset('storage/' . $work->logo ) }}" alt="img04">
-                                        <figcaption class="fig-caption">
-                                            <i class="fa fa-link" ><a href="{{ $work->link }}"></a></i>
-                                            <h5 class="title">{{ $work->name }}</h5>
-                                            <span class="sub-title">{{ $work->type }}   </span>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                            @endforeach
-                            </div> <!-- End: .grid .project-gallery -->
-                        </div> <!-- End: .grid .project-gallery -->
-                    </div> <!-- End: .part -->
-                </div> <!-- End: .row -->
+    <div class="container">
+        <div class="row section-separator">
+            <div class="section-title col-sm-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s">
+                <h3>Recent Portfolio</h3>
             </div>
-        </section>
+            <div class="part col-sm-12">
+                <div class="portfolio-nav col-sm-12" id="filter-button">
+                    <ul>
+                        <li data-filter="*" class="current wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.1s"><span>All Works</span></li>
+                    </ul>
+                </div>
+                <div class="mh-project-gallery col-sm-12 wow fadeInUp" id="project-gallery" data-wow-duration="0.8s" data-wow-delay="0.5s">
+                    <div class="portfolioContainer row">
+                        @foreach($works as $work)
+                            <div class="grid-item col-md-4 col-sm-6 col-xs-12 {{ $work->type }}">
+                                <figure>
+                                    <img src="{{ asset('storage/' . $work->logo ) }}" alt="img04">
+                                    <figcaption class="fig-caption">
+                                            <i class="fa fa-search zoom-icon" data-fancybox data-src="#modal{{ $loop->index }}"></i> <!-- Zoom icon -->
+                                        <h5 class="title">{{ $work->name }}</h5>
+                                        <span class="sub-title">{{ $work->type }}</span>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        @endforeach
+                    </div> <!-- End: .grid .project-gallery -->
+                </div> <!-- End: .grid .project-gallery -->
+            </div> <!-- End: .part -->
+        </div> <!-- End: .row -->
+    </div>
+
+    <!-- Modal section outside the loop -->
+   
+    </div>
+</section>
+@foreach($works as $work)
+    <div class="mh-portfolio-modal" id="modal{{ $loop->index }}">
+    <div class="container">
+                    <div class="row mh-portfolio-modal-inner">
+                        <div class="col-sm-5" style="text-align: justify;">
+                            <h2>My Works</h2>
+                            <p> In my online portfolio, each piece I showcase is a reflection of my skills, creativity, and passion. 
+                                They're not just projects; they're stories of challenges conquered, ideas brought to life, and solutions 
+                                tailored with care. Each work represents countless hours of dedication, fueled by my desire to make a 
+                                meaningful impact and bring value to those I collaborate with.</p>       
+                            <p> Through these projects, I aim to connect with others on a human level, sharing experiences, insights, and expertise. 
+                                My portfolio isn't just about what I've done; it's about the relationships I've built and the difference 
+                                I've made. It's a testament to my commitment to excellence and my belief in the power of authentic 
+                                connection to drive positive change.</p>  
+                                @if($work->link)
+                                <a href="{{ $work->link }}" class="btn btn-fill">Live Demo</a>
+                                @endif
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="mh-portfolio-modal-img">
+                                <img src="{{ asset('storage/' . $work->logo ) }}" alt="" class="img-fluid"> 
+                            </div>
+                        </div>
+                    </div>
+            </div>
+    </div>
+@endforeach
+
         
+
         <!--
         ===================
            BLOG
@@ -385,10 +418,19 @@
                     <div class="col-sm-12 section-title wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.2s">
                         <h3>Webinar/Seminar</h3>
                     </div>
+                    @if($webinars->isEmpty())
+                    <div class="col-sm-12 col-md-4">
+                        <div class="mh-work">
+                            <div class="mh-experience-deatils">
+                                    <!-- Education Institutes-->
+                            <div class="mh-work-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.4s">
+                        <h4>No Webinar</h4>
+                    </div> 
+                    @else
                     @foreach($webinars as $webinar)
                     <div class="col-sm-12 col-md-4">
                          <div class="mh-blog-item dark-bg wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
-                            <img src="{{ asset('storage/' . $webinar->webinar_img ) }}" alt="" class="img-fluid">
+                            <img src="{{ asset('storage/' . $webinar->webinar_img ) }}" alt="" class="img-fluid" style="width: 350px; height: 210px">
                             <div class="blog-inner">
                                 <h2><a href="#">{{ $webinar->agenda }}</a></h2>
                                 <div class="mh-blog-post-info">
@@ -401,6 +443,7 @@
                         </div>
                     </div>
                     @endforeach
+                    @endif
                 </div>
             </div>
         </section>    
@@ -579,6 +622,8 @@
     
     <!-- jQuery -->
     <script src="asset/plugins/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- popper -->
     <script src="asset/plugins/js/popper.min.js"></script>
     <!-- bootstrap -->

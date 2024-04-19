@@ -47,8 +47,8 @@ class WorkController extends Controller
         }
 
         $works->save();
-
-        return redirect()->route('works.index')->with('success', 'Work created successfully');
+        
+        return redirect()->route('works.index')->with('success', 'Added Successfully');
     }
 
     /**
@@ -85,7 +85,7 @@ class WorkController extends Controller
         
         $works->save();
 
-        return redirect()->route('works.index')->with('update', 'Work Updated successfully');
+        return redirect()->route('works.index')->with('update', 'Updated Successfully');
     }
 
     /**
@@ -97,6 +97,6 @@ class WorkController extends Controller
   
         $works->delete();
   
-        return redirect()->route('works.index')->with('error', 'Work deleted successfully');
+        return redirect()->route('works.index')->with('error', 'Deleted Successfully');
     }
 }

@@ -13,7 +13,6 @@ use App\Models\Blog;
 use App\Models\Webinar;
 
 
-
 class front_endController extends Controller
 {
     /**
@@ -35,6 +34,7 @@ class front_endController extends Controller
         $blogs = Blog::all();
 
         $webinars = Webinar::all();
+
 
         // Pass the fetched data to the front-end view
         return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works

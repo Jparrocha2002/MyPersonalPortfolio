@@ -25,7 +25,7 @@ class AdminSeeder extends Seeder
         $address = 'Western Poblacion, Hilongos, Leyte';
         $religion = 'Roman Catholic';
         $status = 'Single';
-        $description = "Hello, my name is Jerry Parrocha, and I'm a student aspiring to become a web developer. I have a passion for both creating designs and capturing photographs. Here's a bit about myself:";
+        $description = "Hello, my name is Jerry Parrocha, and I'm a student aspiring to become a Backend Developer. I also have a passion for both creating designs and capturing photographs. Here's a bit about myself:";
         $fb_link = 'https://www.facebook.com/jerryparrocha1234/';
         $instagram_link = 'https://www.instagram.com/__jewy/';
         $linkedin_link = 'https://ph.linkedin.com/in/jerry-parrocha-57461a261';

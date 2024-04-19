@@ -1,3 +1,4 @@
+<!-- Modal -->
 <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModal" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -19,12 +20,12 @@
                         <input type="text" name="name" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Link</label>
-                        <input type="link" name="link" class="form-control">
+                        <label>Type</label>
+                        <input type="text" name="type" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Type</label>
-                        <input type="text" name="type" class="form-control" >
+                        <label>Link</label>
+                        <input type="link" name="link" class="form-control">
                     </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
@@ -35,5 +36,3 @@
         </div>
     </div>
 </div>
-
-

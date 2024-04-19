@@ -34,9 +34,12 @@
                                                 <td>{{ $contact->email }}</td>
                                                 @if(Auth::user()->role == 'admin')
                                                 <td>
+                                                    <a href="#" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#message{{$contact->id}}">
+                                                        <i class="fas fa-comment"></i>
+                                                    </a>
                                                     <a href="#" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$contact->id}}">
                                                         <i class="fas fa-trash"></i>
-                                                    </a>
+                                                    </a> 
                                                 </td>
                                                 @else
                                                 <td>

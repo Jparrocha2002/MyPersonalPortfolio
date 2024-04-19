@@ -32,10 +32,11 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     Route::middleware(['checkRole:admin'])->group(function () {
-        Route::resource('profile', AdminController::class);
         Route::resource('admin', UserController::class);
     });
     
+    Route::resource('profile', AdminController::class);
+
     Route::resource('skills', SkillController::class);
 
     Route::resource('works', WorkController::class);
@@ -51,6 +52,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     Route::resource('contacts', ContactController::class);
 
     Route::resource('/', front_endController::class);
+
+
 
   
 

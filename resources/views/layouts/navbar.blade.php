@@ -94,7 +94,11 @@
                 <a href="#" data-bs-toggle="modal" data-bs-target="#editProfileModal{{Auth::user()->id}}" class="dropdown-item has-icon">
                     <i class="far fa-user"></i> Profile
                 </a>
-             @endif
+             @else
+              <a href="#" data-bs-toggle="modal" data-bs-target="#editUser{{Auth::user()->id}}" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> Profile
+                </a>
+              @endif
               <div class="dropdown-divider"></div>
               <div class="logout">
               <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModal">

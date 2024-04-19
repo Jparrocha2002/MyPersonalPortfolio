@@ -20,12 +20,12 @@
                         <input type="text" name="name" class="form-control" value="{{ $work->name }}" >
                     </div>
                     <div class="form-group">
-                        <label>Link</label>
-                        <input type="text" name="link" class="form-control" value="{{ $work->link }}" >
-                    </div>
-                    <div class="form-group">
                         <label>Type</label>
                         <input type="text" name="type" class="form-control" value="{{ $work->type }}" >
+                    </div>
+                    <div class="form-group">
+                        <label>Link</label>
+                        <input type="text" name="link" class="form-control" value="{{ $work->link }}" >
                     </div>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
