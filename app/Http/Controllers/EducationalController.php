@@ -12,14 +12,9 @@ class EducationalController extends Controller
      */
     public function index()
     {
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
         $educationals = Educational::orderBy('created_at', 'DESC')->get();
             
         return view('educationals.index', compact('educationals'));
-        }
     }
   
     /**

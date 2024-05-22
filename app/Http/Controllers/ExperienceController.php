@@ -12,14 +12,9 @@ class ExperienceController extends Controller
      */
     public function index()
     {
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
         $experiences = Experience::orderBy('created_at', 'DESC')->get();
 
         return view('experiences.index', compact('experiences'));
-        }
     }
 
     /**

@@ -13,14 +13,10 @@ class BlogController extends Controller
      */
     public function index()
     {  
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
-            $blogs = Blog::orderBy('created_at', 'DESC')->get();
-  
-            return view('blogs.index', compact('blogs'));
-        }
+       
+        $blogs = Blog::orderBy('created_at', 'DESC')->get();
+
+        return view('blogs.index', compact('blogs'));
        
     }
   

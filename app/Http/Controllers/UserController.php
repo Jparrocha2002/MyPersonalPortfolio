@@ -9,14 +9,9 @@ class UserController extends Controller
 {
     public function index()
     {
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
         $admin = User::orderBy('created_at', 'DESC')->get();
   
         return view('admin.index', compact('admin'));
-        }
     }
   
     /**

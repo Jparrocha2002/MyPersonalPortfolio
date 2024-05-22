@@ -12,14 +12,9 @@ class WorkController extends Controller
      */
     public function index()
     {
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
-            $works = Works::orderBy('created_at', 'DESC')->get();
+        $works = Works::orderBy('created_at', 'DESC')->get();
     
-            return view('works.index', compact('works'));
-        }
+        return view('works.index', compact('works'));
     }
   
     /**

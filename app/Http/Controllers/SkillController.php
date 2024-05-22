@@ -12,14 +12,9 @@ class SkillController extends Controller
      */
     public function index()
     {
-        if(empty(auth()->user()->role))
-        {
-            abort(404);
-        } else {
         $skills = Skills::orderBy('created_at', 'DESC')->get();
   
         return view('skills.index', compact('skills'));
-        }
     }
   
     /**
