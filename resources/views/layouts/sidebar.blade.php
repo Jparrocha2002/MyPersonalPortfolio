@@ -16,7 +16,9 @@
               @endif
             </li>
             <li class="menu-header">Components</li>
+            @if(Auth::user()->role == 'spectator')
               <li><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#editUser{{Auth::user()->id}}"><i data-feather="grid"></i><span>Profile</span></a></li>
+            @endif
               <li><a class="nav-link" href="{{ route('admin.index') }}"><i data-feather="grid"></i><span>User</span></a></li>
               <li><a class="nav-link" href="{{ route('skills.index') }}"><i data-feather="grid"></i><span>Skills</span></a></li>
               <li><a class="nav-link" href="{{ route('works.index') }}"><i data-feather="grid"></i><span>Works</span></a></li>
