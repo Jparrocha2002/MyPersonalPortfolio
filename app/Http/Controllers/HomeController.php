@@ -39,7 +39,8 @@ class HomeController extends Controller
         $blogCount = Blog::count();
         $skillCount = Skills::count();
         $webinarCount = Webinar::count();
-        
-        return view('home', compact('spectatorCount','admin','experienceCount','educationalCount','workCount','blogCount','skillCount','webinarCount'));
+        // hahaha
+
+        return view('home', compact('spectatorCount', 'admin', 'experienceCount', 'educationalCount', 'workCount', 'blogCount', 'skillCount', 'webinarCount'));
     }
-} 
+}

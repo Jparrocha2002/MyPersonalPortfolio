@@ -24,7 +24,7 @@ class front_endController extends Controller
         $admin = User::where('role', 'admin')->get();
 
         $skills = Skills::all();
-        
+
         $works = Works::all();
 
         $educationals = Educational::all();
@@ -37,9 +37,9 @@ class front_endController extends Controller
 
 
         // Pass the fetched data to the front-end view
-        return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works
-        , 'educationals' => $educationals, 'experiences' => $experiences, 'blogs' => $blogs
-        , 'webinars' => $webinars]);
+        return view('welcome', [
+            'admin' => $admin, 'skills' => $skills, 'works' => $works, 'educationals' => $educationals, 'experiences' => $experiences, 'blogs' => $blogs, 'webinars' => $webinars
+        ]);
     }
 
     /**
